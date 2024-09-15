@@ -42,7 +42,6 @@ export function SideMenu() {
 function UserComponent() {
   const userName = "Teste";
   const userEmail = "teste@gmail.com";
-  console.log(userEmail.length);
 
   return (
     <div className="flex items-center gap-2 justify-start">
