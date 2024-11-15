@@ -1,0 +1,80 @@
+export const themes = [
+  {
+    name: "zinc",
+    label: "Zinc",
+    light_color: "240 5.9% 10%",
+    dark_color: "0 0% 98%",
+  },
+  {
+    name: "slate",
+    label: "Slate",
+    light_color: "222.2 47.4% 11.2%",
+    dark_color: "210 40% 98%",
+  },
+  {
+    name: "stone",
+    label: "Stone",
+    light_color: "24 9.8% 10%",
+    dark_color: "60 9.1% 97.8%",
+  },
+  {
+    name: "gray",
+    label: "Gray",
+    light_color: "220.9 39.3% 11%",
+    dark_color: "210 20% 98%",
+  },
+  {
+    name: "neutral",
+    label: "Neutral",
+    light_color: "0 0% 9%",
+    dark_color: "0 0% 98%",
+  },
+  {
+    name: "red",
+    label: "Red",
+    light_color: "0 72.2% 50.6%",
+    dark_color: "0 72.2% 50.6%",
+  },
+  {
+    name: "rose",
+    label: "Rose",
+    light_color: "346.8 77.2% 49.8%",
+    dark_color: "346.8 77.2% 49.8%",
+  },
+  {
+    name: "orange",
+    label: "Orange",
+    light_color: "24.6 95% 53.1%",
+    dark_color: "20.5 90.2% 48.2%",
+  },
+  {
+    name: "green",
+    label: "Green",
+    light_color: "142.1 76.2% 36.3%",
+    dark_color: "142.1 70.6% 45.3%",
+  },
+  {
+    name: "blue",
+    label: "Blue",
+    light_color: "221.2 83.2% 53.3%",
+    dark_color: "217.2 91.2% 59.8%",
+  },
+  {
+    name: "yellow",
+    label: "Yellow",
+    light_color: "47.9 95.8% 53.1%",
+    dark_color: "47.9 95.8% 53.1%",
+  },
+  {
+    name: "violet",
+    label: "Violet",
+    light_color: "262.1 83.3% 57.8%",
+    dark_color: "263.4 70% 50.4%",
+  },
+  {
+    name: "indigo",
+    label: "Indigo",
+    light_color: "243 75% 59%",
+    dark_color: "243 75% 59%",
+  },
+];
