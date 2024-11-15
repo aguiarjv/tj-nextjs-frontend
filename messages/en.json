@@ -1,6 +1,27 @@
 {
-  "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+  "SideMenu": {
+    "title": "Trader's Journal",
+    "home": "Dashboard",
+    "trades": "Trades",
+    "strategies": "Strategies",
+    "analysis": "Analysis",
+    "journal": "Journal",
+    "accounts": "Accounts",
+    "theme": "Theme",
+    "lightTheme": "Light",
+    "darkTheme": "Dark",
+    "systemTheme": "System",
+    "changeTheme": "Change Theme",
+    "logout": "Logout"
+  },
+  "DashboardHome": {
+    "title": "Summary",
+    "totalTrades": "Total Trades",
+    "winningTrades": "Winning Trades",
+    "losingTrades": "Losing Trades",
+    "averagePayoff": "Average Payoff",
+    "winningRate": "Winning Rate",
+    "resultByMarket": "Result by Market",
+    "chartTitle": "Charts"
   }
 }
