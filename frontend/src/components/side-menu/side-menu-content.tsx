@@ -54,8 +54,12 @@ function UserComponent({ collapse = false }: { collapse?: boolean }) {
     <div className="flex items-center gap-2 justify-start">
       <Popover>
         <PopoverTrigger asChild>
-          <Button className="rounded-full h-11 min-w-11 w-11 p-0">
-            <User className="w-6/12" />
+          <Button
+            asChild
+            className="rounded-full h-11 min-w-11 w-11 p-3"
+            size="icon"
+          >
+            <User />
           </Button>
         </PopoverTrigger>
         <PopoverContent
