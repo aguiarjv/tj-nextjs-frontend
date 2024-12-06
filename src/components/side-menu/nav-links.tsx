@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import {
   BookOpenText,
   ChartCandlestick,
@@ -11,8 +11,10 @@ import {
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { useLocale } from "next-intl";
 
 export function NavLinks({ collapse = false }: { collapse?: boolean }) {
+  const locale = useLocale();
   const pathname = usePathname();
   const links = [
     { icon: Home, link: "/dashboard/home", label: "Página Inicial" },
@@ -28,6 +30,7 @@ export function NavLinks({ collapse = false }: { collapse?: boolean }) {
         <Link
           href={item.link}
           key={index}
+          locale={locale}
           className={cn(
             "flex items-center gap-4 w-full h-12 text-secondary-foreground hover:bg-primary hover:rounded-md hover:text-secondary dark:hover:text-secondary-foreground p-3",
             pathname.includes(item.link)
