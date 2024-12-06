@@ -34,9 +34,8 @@ export function NavLinks({ collapse = false }: { collapse?: boolean }) {
           className={cn(
             "flex items-center gap-4 w-full h-12 text-secondary-foreground hover:bg-primary hover:rounded-md hover:text-secondary dark:hover:text-secondary-foreground p-3",
             pathname.includes(item.link)
-              ? "border-primary text-primary"
+              ? "bg-primary rounded-md text-secondary dark:text-secondary-foreground hover:bg-primary"
               : "border-none",
-            collapse ? "justify-center" : "justify-start border-r-4",
           )}
         >
           <item.icon />
