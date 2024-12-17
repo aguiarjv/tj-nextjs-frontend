@@ -2,12 +2,20 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import {
   Activity,
-  Globe,
+  Banknote,
+  ChartNoAxesCombined,
+  Coins,
   HandCoins,
   Percent,
   TrendingDown,
   TrendingUp,
+  Wallet,
 } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+
+const cardTitleContent = {
+  text: "text-md font-medium",
+};
 
 const cardMainContent = {
   text: "text-2xl font-bold",
@@ -19,12 +27,39 @@ const cardInfoContent = {
   textRed: "text-red-600 dark:text-red-500",
 };
 
+const tabTriggerContent = {
+  text: "data-[state=active]:bg-secondary data-[state=active]:text-card-foreground dark:data-[state=active]:bg-card dark:data-[state=active]:text-card-foreground/95",
+};
+
+export function FinancialResultCard({
+  className = "",
+}: {
+  className?: string;
+}) {
+  return (
+    <Card className={className}>
+      <CardHeader>
+        <CardTitle className="flex items-center justify-between w-full">
+          <span className={cardTitleContent.text}>Resultado</span>
+          <Wallet className="size-5" />
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <h6 className={cardMainContent.text}>$ 570</h6>
+        <p className={cn(cardInfoContent.text)}>+$30 no último mês</p>
+      </CardContent>
+    </Card>
+  );
+}
+
 export function TotalTradesCard({ className = "" }: { className?: string }) {
   return (
     <Card className={className}>
       <CardHeader>
-        <CardTitle>Total de Trades</CardTitle>
-        <Activity className="size-5" />
+        <CardTitle className="flex items-center justify-between w-full">
+          <span className={cardTitleContent.text}>Total de Trades</span>
+          <Activity className="size-5" />
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <h6 className={cardMainContent.text}>570</h6>
@@ -42,8 +77,10 @@ export function TotalWinningTradesCard({
   return (
     <Card className={className}>
       <CardHeader>
-        <CardTitle>Trades Vencedores</CardTitle>
-        <TrendingUp className="size-5" />
+        <CardTitle className="flex items-center justify-between w-full">
+          <span className={cardTitleContent.text}>Trades Vencedores</span>
+          <TrendingUp className="size-5" />
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <h6 className={cardMainContent.text}>290</h6>
@@ -63,8 +100,10 @@ export function TotalLosingTradesCard({
   return (
     <Card className={className}>
       <CardHeader>
-        <CardTitle>Trades Perdedores</CardTitle>
-        <TrendingDown className="size-5" />
+        <CardTitle className="flex items-center justify-between w-full">
+          <span className={cardTitleContent.text}>Trades Perdedores</span>
+          <TrendingDown className="size-5" />
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <h6 className={cardMainContent.text}>280</h6>
@@ -80,8 +119,10 @@ export function AveragePayoffCard({ className = "" }: { className?: string }) {
   return (
     <Card className={className}>
       <CardHeader>
-        <CardTitle>Payoff Médio</CardTitle>
-        <HandCoins className="size-5" />
+        <CardTitle className="flex items-center justify-between w-full">
+          <span className={cardTitleContent.text}>Payoff Médio</span>
+          <HandCoins className="size-5" />
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <h6 className={cardMainContent.text}>1,87</h6>
@@ -99,8 +140,10 @@ export function WinRateCard({
   return (
     <Card className={className}>
       <CardHeader>
-        <CardTitle>Taxa de Acerto</CardTitle>
-        <Percent className="size-5" />
+        <CardTitle className="flex items-center justify-between w-full">
+          <span className={cardTitleContent.text}>Taxa de Acerto</span>
+          <Percent className="size-5" />
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <h6 className={cardMainContent.text}>56%</h6>
@@ -110,35 +153,47 @@ export function WinRateCard({
   );
 }
 
-export function ResultPerAssetClassCard({
+export function AverageWinningTradeCard({
   className = "",
 }: {
-  className?: string;
+  className?: string | undefined;
 }) {
   return (
     <Card className={className}>
       <CardHeader>
-        <CardTitle>Resultado por Mercado</CardTitle>
-        <Globe className="size-5" />
+        <CardTitle className="flex items-center justify-between w-full">
+          <span className={cardTitleContent.text}>
+            Res. Médio de Trade Vencedor
+          </span>
+          <Banknote className="size-5" />
+        </CardTitle>
       </CardHeader>
-      <CardContent className="flex gap-32 items-center -mt-2">
-        <div className="flex flex-col gap-1 justify-start">
-          <h6 className="text-md font-medium">Forex</h6>
-          <h5 className="text-xl font-bold">$2,500</h5>
-          <p className={cn(cardInfoContent.text)}>+$80 no último mês</p>
-        </div>
+      <CardContent>
+        <h6 className={cardMainContent.text}>$ 12.3</h6>
+        <p className={cn(cardInfoContent.text)}>+$5.2 no último mês</p>
+      </CardContent>
+    </Card>
+  );
+}
 
-        <div className="flex flex-col gap-1 justify-start">
-          <h6 className="text-md font-medium">B3</h6>
-          <h5 className="text-xl font-bold">R$7,120</h5>
-          <p className={cn(cardInfoContent.text)}>+R$200 no último mês</p>
-        </div>
-
-        <div className="flex flex-col gap-1 justify-start">
-          <h6 className="text-md font-medium">Crypto</h6>
-          <h5 className="text-xl font-bold">$5,900</h5>
-          <p className={cn(cardInfoContent.text)}>+$114 no último mês</p>
-        </div>
+export function AverageLosingTradeCard({
+  className = "",
+}: {
+  className?: string | undefined;
+}) {
+  return (
+    <Card className={className}>
+      <CardHeader>
+        <CardTitle className="flex items-center justify-between w-full">
+          <span className={cardTitleContent.text}>
+            Res. Médio de Trade Perdedor
+          </span>
+          <Coins className="size-5" />
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <h6 className={cardMainContent.text}>$ 9.3</h6>
+        <p className={cn(cardInfoContent.text)}>-$1.2 no último mês</p>
       </CardContent>
     </Card>
   );
@@ -147,11 +202,32 @@ export function ResultPerAssetClassCard({
 export function ChartsCard({ className = "" }: { className?: string }) {
   return (
     <Card className={className}>
-      <CardHeader>
-        <CardTitle>Gráficos</CardTitle>
-        <Percent className="size-5" />
+      <CardHeader className="flex flex-col pb-3">
+        <CardTitle className="flex items-center justify-between w-full">
+          <span className={cardTitleContent.text}>Gráficos</span>
+          <ChartNoAxesCombined className="size-5" />
+        </CardTitle>
       </CardHeader>
-      <CardContent></CardContent>
+      <CardContent>
+        <Tabs defaultValue="equity-curve">
+          <TabsList className="bg-card dark:bg-muted border border-black/10 dark:border-white/5">
+            <TabsTrigger
+              className={tabTriggerContent.text}
+              value="equity-curve"
+            >
+              Curva de Capital
+            </TabsTrigger>
+            <TabsTrigger
+              className={tabTriggerContent.text}
+              value="monthly-results"
+            >
+              Resultado Mensal
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="equity-curve">equity curve chart</TabsContent>
+          <TabsContent value="monthly-results">monthly charts</TabsContent>
+        </Tabs>
+      </CardContent>
     </Card>
   );
 }
