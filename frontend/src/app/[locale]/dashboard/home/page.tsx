@@ -4,8 +4,10 @@ import {
   TotalLosingTradesCard,
   AveragePayoffCard,
   WinRateCard,
-  ResultPerAssetClassCard,
   ChartsCard,
+  FinancialResultCard,
+  AverageWinningTradeCard,
+  AverageLosingTradeCard,
 } from "@/components/home/cards";
 import { Separator } from "@/components/ui/separator";
 
@@ -17,12 +19,14 @@ export default function Home() {
       </h1>
       <Separator className="bg-black/25 dark:bg-white/20 mb-5" />
       <div className="grid grid-cols-4 gap-4">
+        <FinancialResultCard />
         <TotalTradesCard />
         <TotalWinningTradesCard />
         <TotalLosingTradesCard />
         <AveragePayoffCard />
         <WinRateCard />
-        <ResultPerAssetClassCard className="col-span-3" />
+        <AverageWinningTradeCard />
+        <AverageLosingTradeCard />
         <ChartsCard className="col-span-4" />
       </div>
     </div>
