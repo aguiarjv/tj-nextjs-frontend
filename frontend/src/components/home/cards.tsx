@@ -12,6 +12,7 @@ import {
   Wallet,
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { EquityCurveChart } from "./equity-curve-chart";
 
 const cardTitleContent = {
   text: "text-md font-medium",
@@ -223,8 +224,16 @@ export function ChartsCard({ className = "" }: { className?: string }) {
             >
               Resultado Mensal
             </TabsTrigger>
+            <TabsTrigger
+              className={tabTriggerContent.text}
+              value="trade-activity"
+            >
+              Ativos operados (radial)
+            </TabsTrigger>
           </TabsList>
-          <TabsContent value="equity-curve">equity curve chart</TabsContent>
+          <TabsContent value="equity-curve">
+            <EquityCurveChart />
+          </TabsContent>
           <TabsContent value="monthly-results">monthly charts</TabsContent>
         </Tabs>
       </CardContent>
